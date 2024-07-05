@@ -19,9 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
     dynamicSettings.enterpriseSettings?.use_custom_logo
       ? "/api/enterprise-settings/logo"
       : buildClientUrl("/danswer.ico");
-
+  //TODO add penfold logo here
   return {
-    title: dynamicSettings.enterpriseSettings?.application_name ?? "Danswer",
+    title: dynamicSettings.enterpriseSettings?.application_name ?? "Penfold AI",
     description: "Question answering for your documents",
     icons: {
       icon: logoLocation,
@@ -41,14 +41,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       {CUSTOM_ANALYTICS_ENABLED && combinedSettings.customAnalyticsScript && (
-        <head>
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: combinedSettings.customAnalyticsScript,
-            }}
-          />
-        </head>
+        <head></head>
       )}
       <body
         className={`${inter.variable} font-sans text-default bg-background ${

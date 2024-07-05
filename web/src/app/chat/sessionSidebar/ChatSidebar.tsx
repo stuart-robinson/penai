@@ -61,7 +61,6 @@ export const ChatSidebar = ({
         w-64
         flex
         flex-none
-        bg-background-weak
         3xl:w-72
         border-r 
         border-border 
@@ -70,6 +69,7 @@ export const ChatSidebar = ({
         h-screen
         transition-transform`}
         id="chat-sidebar"
+        style={{ backgroundColor: "rgb(2 3 40 / var(--tw-bg-opacity))" }}
       >
         <div className="pt-6 flex">
           <Link
@@ -79,8 +79,6 @@ export const ChatSidebar = ({
             }
           >
             <div className="flex w-full">
-              <Logo height={32} width={30} className="mr-1 my-auto" />
-
               {enterpriseSettings && enterpriseSettings.application_name ? (
                 <div>
                   <HeaderTitle>
@@ -94,7 +92,7 @@ export const ChatSidebar = ({
                   )}
                 </div>
               ) : (
-                <HeaderTitle>Danswer</HeaderTitle>
+                <HeaderTitle>Penfold AI</HeaderTitle>
               )}
             </div>
           </Link>

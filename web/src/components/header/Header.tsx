@@ -11,7 +11,11 @@ import { Logo } from "../Logo";
 import { NEXT_PUBLIC_DO_NOT_USE_TOGGLE_OFF_DANSWER_POWERED } from "@/lib/constants";
 
 export function HeaderTitle({ children }: { children: JSX.Element | string }) {
-  return <h1 className="flex text-2xl text-strong font-bold">{children}</h1>;
+  return (
+    <h1 className="flex text-2xl text-strong font-bold text-white">
+      {children}
+    </h1>
+  );
 }
 
 interface HeaderProps {
@@ -36,9 +40,6 @@ export function Header({ user }: HeaderProps) {
           }
         >
           <div className="flex my-auto">
-            <div className="mr-1 my-auto">
-              <Logo />
-            </div>
             <div className="my-auto">
               {enterpriseSettings && enterpriseSettings.application_name ? (
                 <div>
@@ -52,7 +53,7 @@ export function Header({ user }: HeaderProps) {
                   )}
                 </div>
               ) : (
-                <HeaderTitle>Danswer</HeaderTitle>
+                <HeaderTitle>Penfold AI</HeaderTitle>
               )}
             </div>
           </div>
@@ -63,21 +64,28 @@ export function Header({ user }: HeaderProps) {
           <>
             <Link
               href="/search"
-              className={"ml-6 h-full flex flex-col hover:bg-hover"}
+              className={"ml-6 h-full flex flex-col hover:bg-hover group"}
             >
               <div className="w-24 flex my-auto">
                 <div className={"mx-auto flex text-strong px-2"}>
                   <FiSearch className="my-auto mr-1" />
-                  <h1 className="flex text-sm font-bold my-auto">Search</h1>
+                  <h1 className="flex text-sm font-bold my-auto group-hover:text-black text-white">
+                    Search
+                  </h1>
                 </div>
               </div>
             </Link>
 
-            <Link href="/chat" className="h-full flex flex-col hover:bg-hover">
+            <Link
+              href="/chat"
+              className="h-full flex flex-col hover:bg-hover group"
+            >
               <div className="w-24 flex my-auto">
                 <div className="mx-auto flex text-strong px-2">
                   <FiMessageSquare className="my-auto mr-1" />
-                  <h1 className="flex text-sm font-bold my-auto">Chat</h1>
+                  <h1 className="flex text-sm font-bold my-auto group-hover:text-black text-white">
+                    Chat
+                  </h1>
                 </div>
               </div>
             </Link>
